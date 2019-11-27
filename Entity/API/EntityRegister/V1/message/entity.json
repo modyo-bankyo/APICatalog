@@ -1,0 +1,18 @@
+{
+	"entity" : {
+		"id" : "be-000001",
+		"name" : "Bankyo",
+		"creationDate" : "10/0872019",
+		"description" : "Financial Widgets reference entity",
+		"attribute" : [
+			{
+				"key" : "mi Key",
+				"value": "mi  Value"
+			},
+			{
+				"key" : "mi Key2",
+				"value": "mi  Value2"
+			}
+		]
+	}
+}

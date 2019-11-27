@@ -1,0 +1,208 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "AFW_EntityRegister",
+        "version": "1.0.0",
+        "description": "Entity Register API",
+        "contact": {
+            "name": "Ricardo Paredes",
+            "url": "https://developer.modyo.com",
+            "email": "rparedes@modyo.com"
+        },
+        "license": {
+            "name": "GNU GPLv3",
+            "url": "https://www.gnu.org/licenses/gpl.txt"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://developer.modyo.com/services/bankyo/",
+            "description": "Bankyo Services"
+        }
+    ],
+    "paths": {
+        "/entities": {
+            "summary": "Path used to manage the list of entities.",
+            "description": "The REST endpoint/path used to list and create zero or more `Entity` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Entity"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `Entity` entities."
+                    }
+                },
+                "operationId": "getentities",
+                "summary": "List All entities",
+                "description": "Gets a list of all `Entity` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `Entity` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Entity"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createEntity",
+                "summary": "Create a Entity",
+                "description": "Creates a new instance of a `Entity`."
+            }
+        },
+        "/entities/{entityId}": {
+            "summary": "Path used to manage a single Entity.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `Entity`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Entity"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `Entity`."
+                    }
+                },
+                "operationId": "getEntity",
+                "summary": "Get a Entity",
+                "description": "Gets the details of a single instance of a `Entity`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `Entity` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Entity"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateEntity",
+                "summary": "Update a Entity",
+                "description": "Updates an existing `Entity`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleteEntity",
+                "summary": "Delete a Entity",
+                "description": "Deletes an existing `Entity`."
+            },
+            "parameters": [
+                {
+                    "name": "entityId",
+                    "description": "A unique identifier for a `Entity`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "Entity": {
+                "title": "Root Type for Entity",
+                "description": "Entity Object",
+                "type": "object",
+                "properties": {
+                    "entity": {
+                        "description": "entity Data model for application Owners",
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "attribute": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "entity": {
+                        "id": "be-000001",
+                        "name": "Bankyo",
+                        "creationDate": "10/0872019",
+                        "description": "Financial Widgets reference entity",
+                        "attribute": [
+                            {
+                                "key": "mi Key",
+                                "value": "mi  Value"
+                            },
+                            {
+                                "key": "mi Key2",
+                                "value": "mi  Value2"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "AFW-Standard-Security": {
+                "type": "apiKey",
+                "description": "Security schema",
+                "name": "Apikey",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Entity",
+            "description": "Entity Business Owner"
+        }
+    ]
+}
