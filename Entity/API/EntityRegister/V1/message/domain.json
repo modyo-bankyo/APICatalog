@@ -1,0 +1,29 @@
+{
+	"businessDomain" : {
+		"entityId" : "be-000001",
+		"id" : "321234",
+		"name" : "Financial Domain",
+		"creationDate": "2012-04-23T18:25:43.511Z",
+		"subdomain" : [
+			{
+				"id": "4324242",
+				"name" : "xdomain"
+			},
+			{
+				"id": "4324242",
+				"name" : "xdomain"
+			}
+		],
+		"flow" : [
+				{
+					"id" : "434234234",
+					"name" : "Pyme OnBoarding"
+				},
+				{
+					"id" : "43434545",
+					"name" : "Pyme OnBoarding"
+				}
+
+		] 
+	}
+}

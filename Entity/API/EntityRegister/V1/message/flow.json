@@ -1,0 +1,19 @@
+{
+	"flow" : {
+		"idBusinessDomain" : "632623632",
+		"id" : "42334234",
+		"name" : "Pyme Onboarding",
+		"creationDate" : "2012-04-23T18:25:43.511Z",
+		"description" : "ahgsahgsadhjadgjadhajdasddlajda",
+		"businessWidgets" : [
+			{
+				"id" : "41234132",
+				"name" : "mail Register"
+			},
+			{
+				"id" : "412344242",
+				"name" : "Personal Data"
+			}
+		]
+	}
+}

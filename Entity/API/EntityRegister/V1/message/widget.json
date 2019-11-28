@@ -1,0 +1,13 @@
+{
+	"businessWidget" : {
+		"idBusinessFlow" : "324523534523",
+		"category" : "12",
+		"name" : "Mail Registry",
+		"creationDate" : "012-04-23T18:25:43.511Z",
+		"description" : "aadsddasdasdasdasdasdad",
+		"configData" : {
+			"idConfig" : "75732752345",
+			"version" : "1.0"
+		}
+	}
+}

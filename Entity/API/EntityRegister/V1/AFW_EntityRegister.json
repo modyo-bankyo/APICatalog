@@ -128,6 +128,438 @@
                     "required": true
                 }
             ]
+        },
+        "/businessdomains": {
+            "summary": "Path used to manage the list of businessdomains.",
+            "description": "The REST endpoint/path used to list and create zero or more `businessDomain` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/businessDomain"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `businessDomain` entities."
+                    }
+                },
+                "operationId": "getbusinessdomains",
+                "summary": "List All businessdomains",
+                "description": "Gets a list of all `businessDomain` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `businessDomain` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/businessDomain"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createbusinessDomain",
+                "summary": "Create a businessDomain",
+                "description": "Creates a new instance of a `businessDomain`."
+            }
+        },
+        "/businessdomains/{businessdomainId}": {
+            "summary": "Path used to manage a single businessDomain.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `businessDomain`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/businessDomain"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `businessDomain`."
+                    }
+                },
+                "operationId": "getbusinessDomain",
+                "summary": "Get a businessDomain",
+                "description": "Gets the details of a single instance of a `businessDomain`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `businessDomain` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/businessDomain"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updatebusinessDomain",
+                "summary": "Update a businessDomain",
+                "description": "Updates an existing `businessDomain`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deletebusinessDomain",
+                "summary": "Delete a businessDomain",
+                "description": "Deletes an existing `businessDomain`."
+            },
+            "parameters": [
+                {
+                    "name": "businessdomainId",
+                    "description": "A unique identifier for a `businessDomain`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        },
+        "/businesswidgets": {
+            "summary": "Path used to manage the list of businesswidgets.",
+            "description": "The REST endpoint/path used to list and create zero or more `businessWidget` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/businessWidget"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `businessWidget` entities."
+                    }
+                },
+                "operationId": "getbusinesswidgets",
+                "summary": "List All businesswidgets",
+                "description": "Gets a list of all `businessWidget` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `businessWidget` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/businessWidget"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createbusinessWidget",
+                "summary": "Create a businessWidget",
+                "description": "Creates a new instance of a `businessWidget`."
+            }
+        },
+        "/businesswidgets/{businesswidgetId}": {
+            "summary": "Path used to manage a single businessWidget.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `businessWidget`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/businessWidget"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `businessWidget`."
+                    }
+                },
+                "operationId": "getbusinessWidget",
+                "summary": "Get a businessWidget",
+                "description": "Gets the details of a single instance of a `businessWidget`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `businessWidget` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/businessWidget"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updatebusinessWidget",
+                "summary": "Update a businessWidget",
+                "description": "Updates an existing `businessWidget`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deletebusinessWidget",
+                "summary": "Delete a businessWidget",
+                "description": "Deletes an existing `businessWidget`."
+            },
+            "parameters": [
+                {
+                    "name": "businesswidgetId",
+                    "description": "A unique identifier for a `businessWidget`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        },
+        "/transactiondata": {
+            "summary": "Path used to manage the list of transactiondata.",
+            "description": "The REST endpoint/path used to list and create zero or more `transactionData` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/transactionData"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `transactionData` entities."
+                    }
+                },
+                "operationId": "gettransactiondata",
+                "summary": "List All transactiondata",
+                "description": "Gets a list of all `transactionData` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `transactionData` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/transactionData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createtransactionData",
+                "summary": "Create a transactionData",
+                "description": "Creates a new instance of a `transactionData`."
+            }
+        },
+        "/transactiondata/{transactiondataId}": {
+            "summary": "Path used to manage a single transactionData.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `transactionData`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/transactionData"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `transactionData`."
+                    }
+                },
+                "operationId": "gettransactionData",
+                "summary": "Get a transactionData",
+                "description": "Gets the details of a single instance of a `transactionData`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `transactionData` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/transactionData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updatetransactionData",
+                "summary": "Update a transactionData",
+                "description": "Updates an existing `transactionData`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deletetransactionData",
+                "summary": "Delete a transactionData",
+                "description": "Deletes an existing `transactionData`."
+            },
+            "parameters": [
+                {
+                    "name": "transactiondataId",
+                    "description": "A unique identifier for a `transactionData`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        },
+        "/flows": {
+            "summary": "Path used to manage the list of flows.",
+            "description": "The REST endpoint/path used to list and create zero or more `flow` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/flow"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `flow` entities."
+                    }
+                },
+                "operationId": "getflows",
+                "summary": "List All flows",
+                "description": "Gets a list of all `flow` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `flow` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/flow"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createflow",
+                "summary": "Create a flow",
+                "description": "Creates a new instance of a `flow`."
+            }
+        },
+        "/flows/{flowId}": {
+            "summary": "Path used to manage a single flow.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `flow`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/flow"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `flow`."
+                    }
+                },
+                "operationId": "getflow",
+                "summary": "Get a flow",
+                "description": "Gets the details of a single instance of a `flow`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `flow` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/flow"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateflow",
+                "summary": "Update a flow",
+                "description": "Updates an existing `flow`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleteflow",
+                "summary": "Delete a flow",
+                "description": "Deletes an existing `flow`."
+            },
+            "parameters": [
+                {
+                    "name": "flowId",
+                    "description": "A unique identifier for a `flow`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
         }
     },
     "components": {
@@ -184,6 +616,231 @@
                             {
                                 "key": "mi Key2",
                                 "value": "mi  Value2"
+                            }
+                        ]
+                    }
+                }
+            },
+            "businessDomain": {
+                "title": "Root Type for businessDomain",
+                "description": "Domain and subdomains",
+                "type": "object",
+                "properties": {
+                    "businessDomain": {
+                        "type": "object",
+                        "properties": {
+                            "entityId": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "subdomain": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "flow": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "businessDomain": {
+                        "entityId": "be-000001",
+                        "id": "321234",
+                        "name": "Financial Domain",
+                        "creationDate": "2012-04-23T18:25:43.511Z",
+                        "subdomain": [
+                            {
+                                "id": "4324242",
+                                "name": "xdomain"
+                            },
+                            {
+                                "id": "4324242",
+                                "name": "xdomain"
+                            }
+                        ],
+                        "flow": [
+                            {
+                                "id": "434234234",
+                                "name": "Pyme OnBoarding"
+                            },
+                            {
+                                "id": "43434545",
+                                "name": "Pyme OnBoarding"
+                            }
+                        ]
+                    }
+                }
+            },
+            "businessWidget": {
+                "title": "Root Type for businessWidget",
+                "description": "businessWidget object",
+                "type": "object",
+                "properties": {
+                    "businessWidget": {
+                        "type": "object",
+                        "properties": {
+                            "idBusinessFlow": {
+                                "type": "string"
+                            },
+                            "category": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "configData": {
+                                "type": "object",
+                                "properties": {
+                                    "idConfig": {
+                                        "type": "string"
+                                    },
+                                    "version": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "businessWidget": {
+                        "idBusinessFlow": "324523534523",
+                        "category": "12",
+                        "name": "Mail Registry",
+                        "creationDate": "012-04-23T18:25:43.511Z",
+                        "description": "aadsddasdasdasdasdasdad",
+                        "configData": {
+                            "idConfig": "75732752345",
+                            "version": "1.0"
+                        }
+                    }
+                }
+            },
+            "transactionData": {
+                "title": "Root Type for transactionData",
+                "description": "transactionData object",
+                "type": "object",
+                "properties": {
+                    "transactionData": {
+                        "type": "object",
+                        "properties": {
+                            "idBusinessWidget": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "idStatus": {
+                                "type": "string"
+                            },
+                            "data": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "transactionData": {
+                        "idBusinessWidget": "34213413241234",
+                        "id": "23523452345",
+                        "idStatus": "02",
+                        "data": "encrypted Json Data"
+                    }
+                }
+            },
+            "flow": {
+                "title": "Root Type for flow",
+                "description": "flow Object",
+                "type": "object",
+                "properties": {
+                    "flow": {
+                        "type": "object",
+                        "properties": {
+                            "idBusinessDomain": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "businessWidgets": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "flow": {
+                        "idBusinessDomain": "632623632",
+                        "id": "42334234",
+                        "name": "Pyme Onboarding",
+                        "creationDate": "2012-04-23T18:25:43.511Z",
+                        "description": "ahgsahgsadhjadgjadhajdasddlajda",
+                        "businessWidgets": [
+                            {
+                                "id": "41234132",
+                                "name": "mail Register"
+                            },
+                            {
+                                "id": "412344242",
+                                "name": "Personal Data"
                             }
                         ]
                     }
