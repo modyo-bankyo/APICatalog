@@ -1,0 +1,192 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "AFW_WidgetConfiguration",
+        "version": "1.0.0",
+        "description": "Widget Configuration API",
+        "contact": {
+            "name": "Ricardo Paredes",
+            "url": "https://modyo.com",
+            "email": "rparedes@modyo.com"
+        },
+        "license": {
+            "name": "GNU GPLv3",
+            "url": "https://www.gnu.org/licenses/gpl.txt"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080/api",
+            "description": "Service endpoint"
+        }
+    ],
+    "paths": {
+        "/widgetconfigurations": {
+            "summary": "Path used to manage the list of widgetconfigurations.",
+            "description": "The REST endpoint/path used to list and create zero or more `WidgetConfiguration` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WidgetConfiguration"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `WidgetConfiguration` entities."
+                    }
+                },
+                "operationId": "getwidgetconfigurations",
+                "summary": "List All widgetconfigurations",
+                "description": "Gets a list of all `WidgetConfiguration` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `WidgetConfiguration` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/WidgetConfiguration"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createWidgetConfiguration",
+                "summary": "Create a WidgetConfiguration",
+                "description": "Creates a new instance of a `WidgetConfiguration`."
+            }
+        },
+        "/widgetconfigurations/{widgetconfigurationId}": {
+            "summary": "Path used to manage a single WidgetConfiguration.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `WidgetConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WidgetConfiguration"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `WidgetConfiguration`."
+                    }
+                },
+                "operationId": "getWidgetConfiguration",
+                "summary": "Get a WidgetConfiguration",
+                "description": "Gets the details of a single instance of a `WidgetConfiguration`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `WidgetConfiguration` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/WidgetConfiguration"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateWidgetConfiguration",
+                "summary": "Update a WidgetConfiguration",
+                "description": "Updates an existing `WidgetConfiguration`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleteWidgetConfiguration",
+                "summary": "Delete a WidgetConfiguration",
+                "description": "Deletes an existing `WidgetConfiguration`."
+            },
+            "parameters": [
+                {
+                    "name": "widgetconfigurationId",
+                    "description": "A unique identifier for a `WidgetConfiguration`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "WidgetConfiguration": {
+                "title": "Root Type for WidgetConfiguration",
+                "description": "Configuration Obejct data: Setup for Widgets templates",
+                "type": "object",
+                "properties": {
+                    "widgetConfiguration": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "category": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "version": {
+                                "type": "string"
+                            },
+                            "data": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "widgetConfiguration": {
+                        "id": "4123413241324",
+                        "category": "miCategory",
+                        "type": "001",
+                        "version": "1.0",
+                        "data": "JSON CONFIGURATION STRING DATATYPE"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "AFW-Standard-Security": {
+                "type": "apiKey",
+                "description": "AFW-Standard-Security schema defined",
+                "name": "Apikey",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "AFW-Standard-Security": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "widget",
+            "description": "Widget Metadata"
+        }
+    ]
+}
