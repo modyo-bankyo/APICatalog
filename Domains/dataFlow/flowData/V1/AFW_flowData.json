@@ -1,0 +1,188 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "AFW_FlowData",
+        "version": "1.0.0",
+        "description": "Data flow managed API.\n",
+        "contact": {
+            "name": "Ricardo Paredes",
+            "url": "https://modyo.com",
+            "email": "rparedes@modyo.com"
+        },
+        "license": {
+            "name": "GNU GPLv3",
+            "url": "https://www.gnu.org/licenses/gpl.txt"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080/api",
+            "description": "Server endpoints"
+        }
+    ],
+    "paths": {
+        "/flowdata": {
+            "summary": "Path used to manage the list of flowdata.",
+            "description": "The REST endpoint/path used to list and create zero or more `FlowData` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FlowData"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `FlowData` entities."
+                    }
+                },
+                "operationId": "getflowdata",
+                "summary": "List All flowdata",
+                "description": "Gets a list of all `FlowData` entities."
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `FlowData` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FlowData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createFlowData",
+                "summary": "Create a FlowData",
+                "description": "Creates a new instance of a `FlowData`."
+            }
+        },
+        "/flowdata/{flowdataId}": {
+            "summary": "Path used to manage a single FlowData.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `FlowData`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FlowData"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `FlowData`."
+                    }
+                },
+                "operationId": "getFlowData",
+                "summary": "Get a FlowData",
+                "description": "Gets the details of a single instance of a `FlowData`."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `FlowData` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FlowData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateFlowData",
+                "summary": "Update a FlowData",
+                "description": "Updates an existing `FlowData`."
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleteFlowData",
+                "summary": "Delete a FlowData",
+                "description": "Deletes an existing `FlowData`."
+            },
+            "parameters": [
+                {
+                    "name": "flowdataId",
+                    "description": "A unique identifier for a `FlowData`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "FlowData": {
+                "title": "Root Type for FlowData",
+                "description": "Outpu data flow managed",
+                "type": "object",
+                "properties": {
+                    "flowData": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "sessionId": {
+                                "type": "string"
+                            },
+                            "widgetId": {
+                                "type": "string"
+                            },
+                            "data": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "flowData": {
+                        "id": "1231312343",
+                        "sessionId": "9821374814ksk",
+                        "widgetId": "4124",
+                        "data": "Json Serialized Data type"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "AFW-Standard-Security": {
+                "type": "apiKey",
+                "description": "Security Schema definition",
+                "name": "Apikey",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "AFW-Standard-Security": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "data Flow",
+            "description": "Manage generic data for a widgets flow set."
+        }
+    ]
+}
